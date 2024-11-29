@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>주기율표</title>
     <style>
         body {
             font-family:'Pretendard-Regular', 'Pretendard-Bold';
@@ -12,7 +11,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* 전체 화면 높이 사용 */
+            min-height: 100vh; /* 전체 화면 높이 사용 */
             background-color: #f5f5f5;
         }
         h1 {
@@ -24,6 +23,8 @@
             max-width: 1200px; /* 최대 너비 설정 */
             padding: 0 20px; /* 좌우 여백 추가 */
             overflow: auto;
+            overflow-y: auto; /* 세로 스크롤 허용 */
+            max-height: 100vh; /* 최대 높이를 뷰포트로 제한 */
         }
         .periodic-table {
             display: grid;
@@ -77,6 +78,20 @@
             left: 50%;
             transform: translateX(-50%);
             display: none; /* 기본적으로 숨김 처리 */
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 30px; /* 모바일 환경에서 상단 여백 추가 */
+            }
+
+            h1 {
+                font-size: 1.5em; /* 모바일 화면에서 타이틀 크기 줄임 */
+            }
+
+            .container {
+                padding-top: 40px; /* 모바일에서 상단 간격 늘림 */
+            }
         }
         /* 특정 그룹을 색상으로 구분 */
         .alkali-metal{
@@ -798,3 +813,6 @@
         </script>
     </body>
     </html>
+
+
+
