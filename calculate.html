@@ -3,19 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ch"ye"mistry</title>
+    <title>CHYEMISTRY</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        h1 { font-size: 2em; }
-        .button { display: block; width: 100%; padding: 10px; font-size: 1em; cursor: pointer; border-radius: 10px; background-color: #007bff; color: white; border: none; margin: 5px 0; }
+        body { font-family: "Pretendard-Regular"; text-align: center; background-color: #f5f5f5 }
+        h1 { font-size: 2em; font-family: "Pretendard-Bold"}
+        .button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 10px;
+            background-color: #A8D8EA; 
+            color: rgb(0, 0, 0);
+            border: none; 
+            margin: 5px 0;
+            font-family: "Pretendard-Regular";
+        }
+
+        .home-button {
+            position: fixed;
+            right: 5%;
+            width: 3vw;
+            height: 3vw;
+            background-color: none;
+            border: none;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 5px 0;
+            bottom: 5%;
+            cursor: pointer;
+        }
+
+        .home-button img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        
         .reaction-container { margin: 20px; }
         #balanced-reaction, #element-info, #algebraic-method { margin-top: 20px; font-size: 1.2em; }
+
+        @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Pretendard-Bold';
+            src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+            font-weight: 700;
+            font-style: normal;
+        }
     </style>
 </head>
 <body>
-    <h1>ch"ye"mistry</h1>
     <div id="reaction-section">
-        <h2>화학 반응식 검색</h2>
+        <h1>화학 반응식 검색</h1>
         <input type="text" id="reaction-input" placeholder="원소 기호를 입력하세요" onkeydown="handleEnter(event)">
         <button class="button" onclick="searchReactions()">검색</button>
         
@@ -24,6 +73,11 @@
         <div id="algebraic-method"></div>
         
         <div id="reaction-results" class="reaction-container"></div>
+        <button class="home-button" onclick="location.href='index.html'">
+            <div>
+                <img src="https://cdn-icons-png.flaticon.com/128/9385/9385212.png" alt="홈 아이콘콘">
+            </div>    
+        </button>
     </div>
     <script>
         const reactions = [
